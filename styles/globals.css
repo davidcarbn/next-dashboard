@@ -3,11 +3,10 @@ html {
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
-  --p1: 0.25rem;
-  --p2: 0.5rem;
-  --p3: 0.75rem;
-  --p4: 1rem;
+  --break-sm: 640px;
+  --p-sm: 1rem;
+  --p-md: 2rem;
+  --p-lg: 3rem;
 }
 *,
 *:before,
@@ -52,29 +51,23 @@ a {
   text-decoration: none;
 }
 
-#dashboard-layout {
-  display: grid;
-    grid-template-columns: max-content auto;
-    grid-template-rows: 45px auto;
-    grid-template-areas:
-        "header header"
-        "menu content";
-    transition:  300ms ease;
-}
 #dashboard-layout-toggle {display:none;}
 #dashboard-layout-toggle:checked + #dashboard-layout-menu {
-  width:275px;
+  width:310px;
 }
 
-#dashboard-layout-header {
-  grid-area: header;
-}
 #dashboard-layout-menu {
-  grid-area: menu;
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y: auto;
   width:0;
   transition: width 300ms ease;
 }
-#dashboard-layout-content {
-  grid-area: content;
+
+@media screen and (min-width: 640px){
+  #dashboard-layout-menu {
+    width:275px;
+  }
+  #dashboard-layout-toggle:checked + #dashboard-layout-menu {
+    width:0;
+  } 
 }
