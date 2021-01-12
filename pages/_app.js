@@ -8,12 +8,15 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps, router }) {
 
   console.log("App rerender")
-  
+
   if (router.pathname === '/login') {
-    return (<AuthProvider><Component/>
-      </AuthProvider>)
+    return (
+      <AuthProvider>
+        <Component />
+      </AuthProvider>
+      )
   }
-  
+
   return (
     <AuthProvider>
       <DashboardLayout>
@@ -23,5 +26,6 @@ function MyApp({ Component, pageProps, router }) {
 
   )
 }
+
 
 export default MyApp
