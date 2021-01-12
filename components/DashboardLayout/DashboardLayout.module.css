@@ -53,17 +53,10 @@
 .menu ul li a {
     padding: var(--p-sm);
     display:block;
-    background-color: white;
-    border-radius: 6px;
-}
-
-.menu ul li ~ li {
-    margin-top: var(--p-sm);
 }
 
 .menu ul li ul {
-    background-color:white;
-    border-radius: 6px;
+    
     padding-bottom:var(--p-sm);
 }
 .menu ul li ul li a{
@@ -74,7 +67,7 @@
 .menu ul li ul li {
     margin:0;
 }
-.menu > ul > li > .active {
+.menu > ul > .active > a {
     background-color: #5e44ee;
     color: white;
     border-radius: 6px;
@@ -99,5 +92,18 @@
 @media screen and (min-width: 640px){
     .header {
         border-bottom: 1px solid #f0f0f0; 
+    }
+    .menu ul li ul {
+        
+        display:none;
+        overflow:hidden;
+    }
+    .menu > ul > .active > ul  {
+        
+        display:block;
+    }
+    .menu > ul > li:hover > ul {
+       
+        display:block;
     }
   }
